@@ -219,17 +219,6 @@ const closeImageModal = () => {
   {/* CONTENT */}
   <div className="relative z-10 flex flex-col min-h-screen">
 
-    {/* TOP LOGO */}
-    <div className="flex justify-center pt-8">
-      <Image
-        src="/images/img-475.png"
-        alt="SHOOTS by PRG"
-        width={220}
-        height={60}
-        className="object-contain"
-        priority
-      />
-    </div>
 
     {/* HERO BODY */}
     <div className="flex flex-1 items-start px-5 pt-4">
