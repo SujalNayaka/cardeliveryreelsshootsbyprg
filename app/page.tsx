@@ -203,69 +203,55 @@ const closeImageModal = () => {
 
 {/* ================= HERO SECTION ================= */}
 <section className="relative w-full min-h-screen overflow-hidden bg-black">
-
-  {/* BACKGROUND IMAGE */}
+  {/* Background */}
   <div className="absolute inset-0">
     <Image
       src="/images/main.png"
       alt="Hero Background"
       fill
       priority
-      className="object-contain"
+      className="object-cover"
     />
     <div className="absolute inset-0 bg-black/35" />
   </div>
 
-  {/* CONTENT */}
-  <div className="relative z-10 flex min-h-screen items-center">
-
-    {/* HERO BODY */}
-    <div className="px-5">
-      <div className="max-w-md text-white font-sans -translate-y-30">
-
+  {/* Content */}
+  <div className="relative z-10 flex flex-col min-h-screen">
+    <div className="flex flex-1 items-start px-5 pt-20">
+      <div className="max-w-md text-white font-sans">
         <h1 className="text-3xl font-extrabold leading-tight">
           Karnataka&apos;s 1st<br />
           Reel Making Crew
         </h1>
 
-        <p className="mt-2 text-sm tracking-wide text-white/80 font-semibold">
+        <p className="mt-1 text-sm tracking-wide text-white/80 font-semibold">
           CREATIVE MAGIC IN MINUTES
         </p>
 
-        {/* YELLOW ICON */}
         <Image
           src="/images/instant-icon.png"
           alt="Instant Icon"
           width={110}
           height={110}
-          className="mt-0"
+          className="mt-2"
           priority
         />
 
-        {/* TAGLINE */}
-        <div className="mt-5">
+        <div className="mt-3">
           <p className="text-xl font-bold">Car Deliveries</p>
           <p className="text-lg font-semibold">Shot On iPhone</p>
-
-          <p className="mt-3 text-sm text-white/80">
-            Edited & Delivered
-          </p>
-          <p className="text-sm text-white/80">
-            Instantly
-          </p>
+          <p className="mt-2 text-sm text-white/80">Edited & Delivered</p>
+          <p className="text-sm text-white/80">Instantly</p>
         </div>
 
-        {/* CTA */}
         <a
           href="#reels"
-          className="inline-block mt-6 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-lg"
+          className="inline-block mt-5 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-lg"
         >
           View Reels
         </a>
-
       </div>
     </div>
-
   </div>
 </section>
 {/* ================= END HERO ================= */}
