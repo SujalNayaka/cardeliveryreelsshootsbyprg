@@ -210,7 +210,7 @@ const closeImageModal = () => {
       alt="Hero Background"
       fill
       priority
-      className="object-cover"
+      className="object-contain"
     />
     <div className="absolute inset-0 bg-black/35" />
   </div>
