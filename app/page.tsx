@@ -248,7 +248,7 @@ const closeImageModal = () => {
 
         {/* YELLOW ICON */}
         <Image
-          src="/images/IMG_4607.png"
+          src="/images/cards/IMG_4607.png"
           alt="Instant Icon"
           width={110}
           height={110}
