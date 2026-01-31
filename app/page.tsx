@@ -56,7 +56,6 @@ const btsReels = [
   { id: 5, imageUrl: '/images/5.jpg' },
   { id: 6, imageUrl: '/images/6.jpg' },
   { id: 7, imageUrl: '/images/7.jpg' },
-  { id: 8, imageUrl: '/images/8.jpg' },
   { id: 9, imageUrl: '/images/9.jpg' },
   { id: 10, imageUrl: '/images/10.jpg' },
   { id: 11, imageUrl: '/images/11.jpg' },
@@ -202,42 +201,96 @@ const closeImageModal = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex items-start justify-start overflow-hidden pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
-        {/* Background - Yellow pattern on desktop, dark gradient on mobile */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/main.png"
-            alt=""
-            fill
-            className="object-fill"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/30" />
+{/* ================= HERO SECTION ================= */}
+<section className="relative w-full min-h-screen overflow-hidden bg-black">
+
+  {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/main.png"
+      alt="Hero Background"
+      fill
+      priority
+      className="object-fit"
+    />
+    <div className="absolute inset-0 bg-black/35" />
+  </div>
+
+  {/* CONTENT */}
+  <div className="relative z-10 flex flex-col min-h-screen">
+
+    {/* TOP LOGO */}
+    <div className="flex justify-center pt-8">
+      <Image
+        src="/images/img-475.png"
+        alt="SHOOTS by PRG"
+        width={220}
+        height={60}
+        className="object-contain"
+        priority
+      />
+    </div>
+
+    {/* HERO BODY */}
+    <div className="flex flex-1 items-start px-5 pt-4">
+
+      {/* LEFT CONTENT */}
+      <div className="max-w-md text-white font-sans -mt-6">
+
+        <h1 className="text-3xl font-extrabold leading-tight">
+          Karnataka&apos;s 1st<br />
+          Reel Making Crew
+        </h1>
+
+        <p className="mt-2 text-sm tracking-wide text-white/80 font-semibold">
+          CREATIVE MAGIC IN MINUTES
+        </p>
+
+        {/* YELLOW ICON */}
+        <Image
+          src="/images/IMG_4607.png"
+          alt="Instant Icon"
+          width={110}
+          height={110}
+          className="mt-6"
+          priority
+        />
+
+        {/* TAGLINE */}
+        <div className="mt-5 text-white">
+          <p className="text-xl font-bold">
+            Car Deliveries
+          </p>
+
+          <p className="text-lg font-semibold">
+            Shot On iPhone
+          </p>
+
+          <p className="mt-3 text-sm text-white/80">
+            Edited & Delivered
+          </p>
+
+          <p className="text-sm text-white/80">
+            Instantly
+          </p>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full px-4 sm:px-6 flex flex-col lg:flex-row items-start justify-start">
-          {/* Text Content */}
-          <div className="text-left max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 lg:mb-6 text-balance leading-tight text-white">
-              Car Deliveries<br />Shot On iPhone
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-4 sm:mb-6 lg:mb-8 text-balance">
-              Edited & Delivered<br />Instantly
-            </p>
-            <div className="flex gap-2 sm:gap-3 lg:gap-4 flex-col w-fit">
-              <a href="#reels" className="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-accent text-accent-foreground rounded-lg font-bold text-sm sm:text-base lg:text-lg hover:bg-opacity-90 transition text-center">
-                View Reels
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* CTA */}
+        <a
+          href="#reels"
+          className="inline-block mt-6 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-lg"
+        >
+          View Reels
+        </a>
 
-        {/* Animated accent element - hidden on mobile */}
-        <div className="absolute bottom-10 left-10 w-32 h-32 border border-accent/20 rounded-full animate-pulse hidden lg:block" />
-        <div className="absolute top-20 right-10 w-48 h-48 border border-accent/10 rounded-full animate-pulse hidden lg:block" />
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+{/* ================= END HERO ================= */}
+
+
+
 
       {/* Reels Section */}
       <section id="reels" className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 bg-secondary/30">
@@ -251,55 +304,118 @@ const closeImageModal = () => {
             <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-10">
               {/* Delivered Reels Card */}
               <div
-                onClick={() => setActiveReelsTab('delivered')}
-                className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border bg-card hover:border-accent transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2">
-                  <div className="text-2xl sm:text-5xl">🎬</div>
-                  <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">EDITED REELS</h3>
-                  <p className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center">Where every delivery feels like a movie</p>
-                </div>
-              </div>
+  onClick={() => setActiveReelsTab('delivered')}
+  className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border hover:border-accent transition-all duration-300"
+>
+  <Image
+    src="/images/cards/edited-reels.jpg"
+    alt="Edited Reels"
+    fill
+    className="object-cover"
+  />
 
-              {/* Behind the Scenes Card */}
-              <div
-                onClick={() => setActiveReelsTab('bts')}
-                className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border bg-card hover:border-accent transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2">
-                  <div className="text-2xl sm:text-5xl">🎥</div>
-                  <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">HOW WE SHOOT</h3>
-                  <p className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center">Shot live, edited fast, delivered instantly</p>
-                </div>
-              </div>
+  {/* dark overlay */}
+  <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition" />
 
-              {/* Client Reviews Card */}
-              <div
-                onClick={() => setActiveReelsTab('reviews')}
-                className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border bg-card hover:border-accent transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2">
-                  <div className="text-2xl sm:text-5xl">⭐</div>
-                  <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">CLIENT REVIEWS</h3>
-                  <p className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center">Proof over promises</p>
-                </div>
-              </div>
+  {/* content */}
+  <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2 text-black">
+    <div className="text-2xl sm:text-5xl">🎬</div>
+    <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">
+      EDITED REELS
+    </h3>
+    <p className="text-xs sm:text-sm lg:text-base text-black/80 text-center">
+      Where every delivery feels like a movie
+    </p>
+    <span className="mt-3 px-3 py-1 text-xs sm:text-sm font-extrabold tracking-wide text-black bg-white/90 rounded-full group-hover:scale-105 transition-transform">
+    Click to watch
+    </span>
+  </div>
+</div>
 
-              {/* Images Captured Card */}
+
               <div
-                onClick={() => setActiveReelsTab('images')}
-                className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border bg-card hover:border-accent transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2">
-                  <div className="text-2xl sm:text-5xl">📸</div>
-                  <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">PHOTOGRAPHS CAPTURED</h3>
-                  <p className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center">Big quality from a small device</p>
-                </div>
-              </div>
+  onClick={() => setActiveReelsTab('bts')}
+  className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border hover:border-accent transition-all duration-300"
+>
+  <Image
+    src="/images/cards/how-we-shoot.jpg"
+    alt="How We Shoot"
+    fill
+    className="object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition" />
+
+  <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2 text-black">
+    <div className="text-2xl sm:text-5xl">🎥</div>
+    <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">
+      HOW WE SHOOT
+    </h3>
+    <p className="text-xs sm:text-sm lg:text-base text-black/80 text-center">
+      Shot live, edited fast, delivered instantly
+    </p>
+    <span className="mt-3 px-3 py-1 text-xs sm:text-sm font-extrabold tracking-wide text-black bg-white/90 rounded-full group-hover:scale-105 transition-transform">
+    Click to watch
+    </span>
+  </div>
+</div>
+
+
+              <div
+  onClick={() => setActiveReelsTab('reviews')}
+  className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border hover:border-accent transition-all duration-300"
+>
+  <Image
+    src="/images/cards/client-reviews.jpg"
+    alt="Client Reviews"
+    fill
+    className="object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition" />
+
+  <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2 text-black">
+    <div className="text-2xl sm:text-5xl">⭐</div>
+    <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">
+      CLIENT REVIEWS
+    </h3>
+    <p className="text-xs sm:text-sm lg:text-base text-black/80 text-center">
+      Proof over promises
+    </p>
+    <span className="mt-3 px-3 py-1 text-xs sm:text-sm font-extrabold tracking-wide text-black bg-white/90 rounded-full group-hover:scale-105 transition-transform">
+    Click to watch
+    </span>
+  </div>
+</div>
+
+
+              <div
+  onClick={() => setActiveReelsTab('images')}
+  className="relative min-h-40 sm:min-h-64 lg:min-h-80 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 border-border hover:border-accent transition-all duration-300"
+>
+  <Image
+    src="/images/cards/photographs.jpg"
+    alt="Photographs"
+    fill
+    className="object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition" />
+
+  <div className="relative h-full flex flex-col items-center justify-center p-3 sm:p-6 gap-2 text-black">
+    <div className="text-2xl sm:text-5xl">📸</div>
+    <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-center">
+      PHOTOGRAPHS
+    </h3>
+    <p className="text-xs sm:text-sm lg:text-base text-black/80 text-center">
+      Big quality,small device
+    </p>
+    <span className="mt-3 px-3 py-1 text-xs sm:text-sm font-extrabold tracking-wide text-black bg-white/90 rounded-full group-hover:scale-105 transition-transform">
+    Click to watch
+    </span>
+  </div>
+</div>
+
             </div>
           ) : (
             // Opened Card Content
@@ -564,7 +680,7 @@ const closeImageModal = () => {
           </div>
 
           <div className="border-t border-border pt-4 sm:pt-6 lg:pt-8 text-center text-muted-foreground text-xs sm:text-sm">
-            <p>2024 SHOOTS by PRG. All rights reserved.</p>
+            <p>SHOOTS by PRG. All rights reserved.</p>
           </div>
         </div>
       </footer>
