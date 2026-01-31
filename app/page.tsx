@@ -211,20 +211,17 @@ const closeImageModal = () => {
       alt="Hero Background"
       fill
       priority
-      className="object-fit"
+      className="object-contain"
     />
     <div className="absolute inset-0 bg-black/35" />
   </div>
 
   {/* CONTENT */}
-  <div className="relative z-10 flex flex-col min-h-screen">
-
+  <div className="relative z-10 flex min-h-screen items-center">
 
     {/* HERO BODY */}
-    <div className="flex flex-1 items-start px-5 pt-4">
-
-      {/* LEFT CONTENT */}
-      <div className="max-w-md text-white font-sans -mt-6">
+    <div className="px-5">
+      <div className="max-w-md text-white font-sans -translate-y-30">
 
         <h1 className="text-3xl font-extrabold leading-tight">
           Karnataka&apos;s 1st<br />
@@ -241,24 +238,18 @@ const closeImageModal = () => {
           alt="Instant Icon"
           width={110}
           height={110}
-          className="mt-6"
+          className="mt-0"
           priority
         />
 
         {/* TAGLINE */}
-        <div className="mt-5 text-white">
-          <p className="text-xl font-bold">
-            Car Deliveries
-          </p>
-
-          <p className="text-lg font-semibold">
-            Shot On iPhone
-          </p>
+        <div className="mt-5">
+          <p className="text-xl font-bold">Car Deliveries</p>
+          <p className="text-lg font-semibold">Shot On iPhone</p>
 
           <p className="mt-3 text-sm text-white/80">
             Edited & Delivered
           </p>
-
           <p className="text-sm text-white/80">
             Instantly
           </p>
@@ -274,10 +265,10 @@ const closeImageModal = () => {
 
       </div>
     </div>
+
   </div>
 </section>
 {/* ================= END HERO ================= */}
-
 
 
 
